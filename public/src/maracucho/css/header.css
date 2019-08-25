@@ -1,0 +1,122 @@
+header {
+	position: relative;
+	background-color: black;
+	background-image: url('../img/header.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	color: white;
+	padding: 5%;
+}
+
+#curve{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: white;
+}
+
+.header{
+	margin: 0px;
+}
+
+header a {
+	color: #b3b3b5;
+}
+
+header a:hover{
+	color: white;
+}
+
+header fieldset{
+	background: rgba(0, 0, 0, 0.38);
+	border-radius: 25px;
+	padding-bottom: 2%;
+}
+
+header fieldset label {
+	font-size: 2.5em;
+}
+
+.logo {
+	margin-bottom: 15%;
+}
+
+.main-input{
+	display: inline-block;
+	width: 90%;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid white;
+	outline: none;
+	color: white;
+	text-align: center;
+	font-size: 1.7em;
+}
+
+.main-input:focus {
+	background: transparent;
+	color: white;
+	box-shadow: none;
+}
+
+.loading {
+	display: inline-block;
+}
+
+.nav-link {
+	display: inline-block;
+}
+
+.nav-link .loading.hide{
+	visibility: hidden;
+}
+
+.loading-bar {
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  border-color: transparent;
+  animation: loading 1s ease-in-out infinite;
+}
+
+.loading-bar:nth-child(1) {
+  background-color: #fe5403;
+  animation-delay: 0;
+}
+
+.loading-bar:nth-child(2) {
+  background-color: #fe5403;
+  animation-delay: 0.09s;
+}
+
+.loading-bar:nth-child(3) {
+  background-color: #fe5403;
+  animation-delay: .18s;
+}
+
+@keyframes loading {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(1, 2.2);
+	}
+	40% {
+		transform: scale(1);
+	}
+}
+
+#menu-slider .carousel-item {
+	left: 10%;
+	width: 80%;
+}
+
+#menu-slider .carousel-item ul {
+	height: 48px;
+}
+
+#menu-slider a:hover{
+	color: #fe5403;
+}

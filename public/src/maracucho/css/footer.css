@@ -1,0 +1,60 @@
+footer {
+	background-color: black;
+	background-image: url('../img/banda.png');
+	background-repeat: no-repeat;
+	background-position: 65% 0%;
+	background-size: auto 110%;
+	color: white;
+}
+
+footer a {
+	color: white;
+}
+
+footer form * {
+	margin-top: 5px; 
+}
+
+footer .redes a {
+	color: #fe5403;
+	font-size: 18px;
+}
+
+footer .redes a:hover{
+	color: white;
+}
+
+.redes {
+	margin-top: 20px;
+}
+
+footer .fa-whatsapp:before {
+	font-size: 30px;
+	margin-right: 5px;
+}
+
+footer .fa-envelope:before {
+	font-size: 20px;
+	margin-right: 5px;
+}
+
+footer a .circled-icon{
+	background-color: #fe5403;
+	color: black;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	padding-top: 7px;
+	text-align: center;
+	margin-right: 5px;
+}
+
+.btn-form-footer {
+	background-color: #fe5403;
+	color: black;
+}
+
+footer img {
+	margin: 10%;
+}
