@@ -322,7 +322,7 @@ Purchase: http://themeforest.net/user/kamleshyadav
                         </div>
                     </div>
                     <div class="col-4">
-                        
+
                     </div>
                     <div class="col-4">
                         <div class="impl_foo_box footer_abt_text" style="margin-top: -100px;">
@@ -338,7 +338,7 @@ Purchase: http://themeforest.net/user/kamleshyadav
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    <p class="impl_copyright">Copyright &copy; 2019 Carprojects.</p>
+                    <p class="impl_copyright">Copyright &copy; 2019 Cognitiia.</p>
                     <p class="impl_copyright"><a href="{{asset('/src/pedro/terminos-y-condiciones-generales.pdf')}}" target='_blank'>Términos y Condiciones.</a> Diseñado y desarrollado por Cognitiia C.A.</p>
 
                 </div>
