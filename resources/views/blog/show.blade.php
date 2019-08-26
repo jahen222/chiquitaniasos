@@ -129,42 +129,47 @@
 
                                                     <div class="impl_blog_box single_blog" style="color: #5d5d5d !important;">
                                                         <div class="impl_post_data">
-                                                            <?php if ($user->id == $comment->user_id || $user->username == 'Admin'): ?>
-                                                                <a class="dropdown-toggle float-right" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;"></a>
-                                                                <div class="dropdown-menu">
-                                                                  <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal{{$comment->id}}">Editar</button>
-                                                                  <form action="/comment/{{$comment->id}}/destroy" method="post">
-                                                                    <input type="hidden" name="_method" value="delete" />
-                                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                    <input class="dropdown-item delete-post" value="Eliminar"></input>
-                                                                  </form>
-                                                                </div>
-                                                                <div class="modal fade" id="exampleModal{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                                  <div class="modal-dialog" role="document">
-                                                                    <div class="modal-content">
-                                                                      <div class="modal-header">
-                                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                          <span aria-hidden="true">&times;</span>
-                                                                        </button>
+                                                          @if (Auth::guest())
+                                                              <h2 style="padding: 0px 0px 0px !important;"><a href="#" style="color: #5d5d5d !important;">{{$comment->user->email}}</a></h2>
+                                                              <p>{{$comment->comment}}</p>
+                                                          @else
+                                                              <?php if ($user->id == $comment->user_id || $user->username == 'Admin'): ?>
+                                                                  <a class="dropdown-toggle float-right" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: black;"></a>
+                                                                  <div class="dropdown-menu">
+                                                                    <button type="button" class="dropdown-item" data-toggle="modal" data-target="#exampleModal{{$comment->id}}">Editar</button>
+                                                                    <form action="/comment/{{$comment->id}}/destroy" method="post">
+                                                                      <input type="hidden" name="_method" value="delete" />
+                                                                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                      <input class="dropdown-item delete-post" value="Eliminar"></input>
+                                                                    </form>
+                                                                  </div>
+                                                                  <div class="modal fade" id="exampleModal{{$comment->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                      <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                            <span aria-hidden="true">&times;</span>
+                                                                          </button>
+                                                                        </div>
+                                                                        <form action="/comment/{{$comment->id}}/update" method="post">
+                                                                            <input name="_method" type="hidden" value="PUT">
+                                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                            <div class="modal-body">
+                                                                              <textarea name="comment" rows="8" cols="50">{{$comment->comment}}</textarea>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
+                                                                              <button type="submit" class="btn btn-primary">Guardar</button>
+                                                                            </div>
+                                                                        </form>
                                                                       </div>
-                                                                      <form action="/comment/{{$comment->id}}/update" method="post">
-                                                                          <input name="_method" type="hidden" value="PUT">
-                                                                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                          <div class="modal-body">
-                                                                            <textarea name="comment" rows="8" cols="50">{{$comment->comment}}</textarea>
-                                                                          </div>
-                                                                          <div class="modal-footer">
-                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
-                                                                            <button type="submit" class="btn btn-primary">Guardar</button>
-                                                                          </div>
-                                                                      </form>
                                                                     </div>
                                                                   </div>
-                                                                </div>
-                                                            <?php endif; ?>
-                                                            <h2 style="padding: 0px 0px 0px !important;"><a href="#" style="color: #5d5d5d !important;">{{$comment->user->email}}</a></h2>
-                                                            <p>{{$comment->comment}}</p>
+                                                              <?php endif; ?>
+                                                              <h2 style="padding: 0px 0px 0px !important;"><a href="#" style="color: #5d5d5d !important;">{{$comment->user->email}}</a></h2>
+                                                              <p>{{$comment->comment}}</p>
+                                                          @endif
                                                         </div>
                                                     </div>
                                                 </div>
