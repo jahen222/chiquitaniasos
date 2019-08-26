@@ -76,9 +76,6 @@ Purchase: http://themeforest.net/user/kamleshyadav
                                 <ul>
                                     <li class="dropdown impl_btn active"><a ref="javascript:;" style="padding-top: 15px;">{{ Auth::user()->username }}</a>
                                         <ul class="sub-menu">
-                                            <li><a href="{{ url('users/'.Auth::user()->id.'/settings') }}">Configuración</a></li>
-                                            <li><a href="{{ url('users/'.Auth::user()->id.'/orders') }}">Órdenes</a></li>
-                                            <li><a href="{{ url('users/'.Auth::user()->id.'/personalData') }}">Perfil</a></li>
                                             @if(Auth::check() && Auth::user()->admin)
                                                     <li>
                                                         <a href="{{ url('/admin') }}">
@@ -116,9 +113,6 @@ Purchase: http://themeforest.net/user/kamleshyadav
                                             <li class="d-xl-none d-lg-none"><a href="#signin" data-toggle="modal">Entrar</a></li>
                                             <li class="d-xl-none d-lg-none"><a href="#signup" data-toggle="modal">Registrarse</a></li>
                                         @else
-                                            <li class="d-xl-none d-lg-none"><a href="{{ url('users/'.Auth::user()->id.'/settings') }}">Configuración</a></li>
-                                            <li class="d-xl-none d-lg-none"><a href="{{ url('users/'.Auth::user()->id.'/orders') }}">Órdenes</a></li>
-                                            <li class="d-xl-none d-lg-none"><a href="{{ url('users/'.Auth::user()->id.'/personalData') }}">Perfil</a></li>
                                             <li class="d-xl-none d-lg-none">
                                               <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Salir</a>
                                             </li>
